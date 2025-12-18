@@ -1,0 +1,41 @@
+# 1. Dependencies 
+node_modules/
+package-lock.json 
+
+# 2. Environment Variables 
+.env
+.env.test
+.env.production
+.env.local
+
+# 3. Build Output 
+dist/
+build/
+out/
+
+# 4. Logs 
+logs/
+*.log
+npm-debug.log*
+
+# 5. User Uploads 
+uploads/*
+!uploads/.gitkeep
+
+# 6. IDE & Editor Settings 
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 7. OS Generated Files 
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# 8. Testing Coverage 
+coverage/
+
+# 9. Temporary Files
+tmp/
+temp/

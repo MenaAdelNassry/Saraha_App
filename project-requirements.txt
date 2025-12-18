@@ -1,0 +1,50 @@
+Project Requirements Specification: Saraha Clone (Backend Only)
+1. Functional Requirements
+A. Authentication & User Management
+
+Sign Up: Users must be able to register using email and password.
+
+Email Verification: System must send a verification link/code to validate the user's email address upon registration to prevent fake accounts.
+
+Login: Secure login mechanism using JWT (JSON Web Tokens).
+
+Profile Management: Users can update their display name, bio, and upload an avatar.
+
+Password Recovery: Flow to reset forgotten passwords via email.
+
+B. Messaging System
+
+Anonymous Messaging: Public users (unregistered or logged out) can send text-based messages to registered users using their unique profile link/ID.
+
+Inbox Retrieval: Registered users can retrieve a paginated list of received messages.
+
+Message Details: Users can view the timestamp and content of individual messages.
+
+Delete Message: Users can permanently delete received messages.
+
+Reply Capability (Optional V2): Users can reply to messages (replies visible to the sender if they provided a contact method, or public on profile).
+
+2. Non-Functional Requirements (Quality Attributes)
+A. Security
+
+Input Sanitization: Strict validation and sanitization of all incoming text (especially anonymous messages) to prevent XSS and Injection attacks.
+
+Rate Limiting: Implement strict rate limiting on the "Send Message" endpoint to prevent spamming and DDoS attacks.
+
+Data Protection: Passwords must be hashed (e.g., using bcrypt/Argon2) before storage.
+
+B. Performance & Scalability
+
+Pagination: All list endpoints (e.g., Get Messages) must implement Cursor-based or Offset-based pagination.
+
+Stateless Architecture: The API should be stateless to allow for horizontal scaling in the future.
+
+C. Technology Stack
+
+Language: TypeScript
+
+Runtime: Node.js
+
+Framework: Express.js
+
+Database: MongoDB (NoSQL)
